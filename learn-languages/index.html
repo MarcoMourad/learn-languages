@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <title>Learn Languages</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="app" class="app-container">
+
+    <section id="view-onboarding" class="view onboarding-view">
+
+        <div class="onboarding-header">
+            <button
+                id="btn-onboarding-back"
+                class="icon-button hidden"
+                type="button"
+                onclick="prevOnboardingStep()"
+            >
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <div id="onboarding-steps" class="onboarding-content">
+
+            <div class="step-content" data-step="1">
+
+                <div class="hero-icon">
+                    <i class="fa-solid fa-globe"></i>
+                </div>
+
+                <div class="selection-list">
+                    <button
+                        class="selection-button"
+                        type="button"
+                        onclick="nextOnboardingStep()"
+                    >
+                        عربي (مصري)
+                    </button>
+
+                    <button
+                        class="selection-button"
+                        type="button"
+                        onclick="nextOnboardingStep()"
+                    >
+                        عربي (خليجي)
+                    </button>
+
+                    <button
+                        class="selection-button"
+                        type="button"
+                        onclick="nextOnboardingStep()"
+                    >
+                        عربي (شامي)
+                    </button>
+
+                    <button
+                        class="selection-button"
+                        type="button"
+                        onclick="nextOnboardingStep()"
+                    >
+                        عربي (دارجة)
+                    </button>
+
+                    <button
+                        class="selection-button"
+                        type="button"
+                        onclick="nextOnboardingStep()"
+                    >
+                        English (US)
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="step-content hidden" data-step="2">
+
+                <div class="section-heading">
+                    <h2>صفحة التسجيل</h2>
+                    <p>خلينا نتعرف عليك</p>
+                </div>
+
+                <div class="form-stack">
+
+                    <div class="form-group">
+                        <label>الإسم</label>
+
+                        <div class="form-row">
+                            <input
+                                type="text"
+                                placeholder="الاسم الأخير"
+                                class="custom-input"
+                            >
+
+                            <input
+                                type="text"
+                                placeholder="الاسم الأول"
+                                class="custom-input"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>تاريخ الميلاد</label>
+
+                        <div class="form-row">
+
+                            <select class="custom-input">
+                                <option>سنة</option>
+                                <option>2000</option>
+                            </select>
+
+                            <select class="custom-input">
+                                <option>شهر</option>
+                                <option>1</option>
+                            </select>
+
+                            <select class="custom-input">
+                                <option>يوم</option>
+                                <option>15</option>
+                            </select>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>البلد</label>
+
+                        <div class="form-row">
+
+                            <input
+                                type="text"
+                                placeholder="المدينة"
+                                class="custom-input"
+                            >
+
+                            <select class="custom-input">
+                                <option>مصر</option>
+                                <option>السعودية</option>
+                            </select>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>النوع</label>
+
+                        <select class="custom-input">
+                            <option>ذكر</option>
+                            <option>أنثى</option>
+                        </select>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="step-content hidden" data-step="3">
+
+                <div class="section-heading">
+                    <h2>بيانات الحساب</h2>
+                    <p>أنشئ حسابك وابدأ رحلتك</p>
+                </div>
+
+                <div class="form-stack">
+
+                    <div class="form-group centered">
+                        <label>اسم المستخدم</label>
+
+                        <input
+                            type="text"
+                            placeholder="اسم المستخدم"
+                            class="custom-input"
+                        >
+                    </div>
+
+                    <div class="form-group centered">
+                        <label>الباسوورد</label>
+
+                        <input
+                            type="password"
+                            placeholder="الباسوورد"
+                            class="custom-input"
+                        >
+                    </div>
+
+                    <div class="form-group centered">
+                        <label>تأكيد الباسوورد</label>
+
+                        <input
+                            type="password"
+                            placeholder="تأكيد الباسوورد"
+                            class="custom-input"
+                        >
+                    </div>
+
+                    <div class="form-group centered">
+                        <label>رقم التليفون / الايميل</label>
+
+                        <input
+                            type="text"
+                            placeholder="رقم التليفون / الايميل"
+                            class="custom-input"
+                        >
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="step-content hidden verification-step" data-step="4">
+
+                <div class="verification-content">
+
+                    <div class="verification-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+
+                    <h2>دخل الكود التأكيدي</h2>
+
+                    <p>أدخل الكود المرسل إليك</p>
+
+                    <input
+                        type="text"
+                        placeholder="000000"
+                        class="custom-input verification-input"
+                        maxlength="6"
+                    >
+
+                </div>
+
+            </div>
+
+            <div class="step-content hidden" data-step="5">
+
+                <div class="section-heading">
+                    <h2>خلينا نحدد أهدافك</h2>
+                    <p>اختار اهتماماتك عشان نخصص تجربتك</p>
+                </div>
+
+                <div class="form-stack">
+
+                    <div class="form-group">
+                        <label>الدراسة</label>
+
+                        <select class="custom-input">
+                            <option>أكاديمي</option>
+                            <option>عمل حر</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>عايز تتعلم ايه</label>
+
+                        <select class="custom-input">
+                            <option>لغات</option>
+                            <option>برمجة</option>
+                        </select>
+                    </div>
+
+                    <div class="study-grid">
+
+                        <button
+                            class="study-box"
+                            type="button"
+                            onclick="toggleStudyOption(this)"
+                        >
+                            A
+                        </button>
+
+                        <button
+                            class="study-box"
+                            type="button"
+                            onclick="toggleStudyOption(this)"
+                        >
+                            B
+                        </button>
+
+                        <button
+                            class="study-box"
+                            type="button"
+                            onclick="toggleStudyOption(this)"
+                        >
+                            C
+                        </button>
+
+                        <button
+                            class="study-box"
+                            type="button"
+                            onclick="toggleStudyOption(this)"
+                        >
+                            D
+                        </button>
+
+                        <button
+                            class="study-box"
+                            type="button"
+                            onclick="toggleStudyOption(this)"
+                        >
+                            E
+                        </button>
+
+                        <button
+                            class="study-box"
+                            type="button"
+                            onclick="toggleStudyOption(this)"
+                        >
+                            F
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="onboarding-footer">
+
+            <button
+                id="btn-onboarding-next"
+                class="primary-button"
+                type="button"
+                onclick="nextOnboardingStep()"
+            >
+                التالي
+            </button>
+
+            <button
+                id="btn-onboarding-prev-bottom"
+                class="secondary-button"
+                type="button"
+                onclick="prevOnboardingStep()"
+            >
+                ارجع
+            </button>
+
+        </div>
+
+    </section>
+
+    <section id="view-dashboard" class="view dashboard-view hidden">
+
+        <header class="dashboard-header">
+
+            <div class="profile-wrapper">
+
+                <button
+                    class="avatar-button"
+                    type="button"
+                    onclick="toggleProfileMenu()"
+                >
+                    <img
+                        src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix&backgroundColor=b6e3f4"
+                        alt="Avatar"
+                    >
+                </button>
+
+                <div id="profile-menu" class="profile-menu hidden">
+
+                    <button type="button">
+                        <i class="fa-solid fa-gear"></i>
+                        الإعدادات
+                    </button>
+
+                    <button
+                        type="button"
+                        onclick="showSubscriptionModal()"
+                    >
+                        <i class="fa-solid fa-crown"></i>
+                        الإشتراكات
+                    </button>
+
+                    <div class="menu-divider"></div>
+
+                    <button
+                        type="button"
+                        class="logout-button"
+                        onclick="location.reload()"
+                    >
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        تسجيل الخروج
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="dashboard-tabs">
+
+                <div id="tab-indicator"></div>
+
+                <button
+                    id="tab-main-button"
+                    class="active"
+                    type="button"
+                    onclick="switchDashboardTab('main')"
+                >
+                    الرئيسية
+                </button>
+
+                <button
+                    id="tab-stats-button"
+                    type="button"
+                    onclick="switchDashboardTab('stats')"
+                >
+                    الاحصائيات
+                </button>
+
+            </div>
+
+            <div class="dashboard-brand">
+
+                <div class="streak">
+                    <span>5</span>
+                    <i class="fa-solid fa-fire"></i>
+                </div>
+
+                <div class="brand-logo">🍋</div>
+
+            </div>
+
+        </header>
+
+        <main id="tab-main" class="dashboard-content">
+
+            <div
+                id="decks-container"
+                class="decks-grid"
+            ></div>
+
+        </main>
+
+        <main
+            id="tab-stats"
+            class="stats-content hidden"
+        >
+
+            <div class="stats-header">
+
+                <div class="stats-icon">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </div>
+
+                <h2>إحصائيات اليوم</h2>
+
+                <p>تابع تقدمك واستمر في التعلم</p>
+
+            </div>
+
+            <div class="stats-card">
+
+                <div class="stat-item">
+
+                    <span>انت ذاكرت</span>
+
+                    <strong>
+                        <span id="stat-cards">0</span>
+                        <small>كارت</small>
+                    </strong>
+
+                </div>
+
+                <div class="stat-divider"></div>
+
+                <div class="stat-item">
+
+                    <span>انت حفظت</span>
+
+                    <strong>
+                        <span id="stat-words">0</span>
+                        <small>كلمة</small>
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <button
+                class="share-button"
+                type="button"
+            >
+                <i class="fa-solid fa-share-nodes"></i>
+            </button>
+
+        </main>
+
+    </section>
+
+    <section id="view-study" class="view study-view hidden">
+
+        <div class="study-header">
+
+            <button
+                class="close-study-button"
+                type="button"
+                onclick="endStudySession()"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="progress-track">
+                <div id="study-progress-bar"></div>
+            </div>
+
+            <span
+                id="study-progress-text"
+                class="progress-text"
+            >
+                1 / 1
+            </span>
+
+        </div>
+
+        <div class="study-main">
+
+            <div class="media-panel">
+
+                <div class="video-container">
+
+                    <div id="youtube-player"></div>
+
+                    <div
+                        id="video-placeholder"
+                        class="video-placeholder hidden"
+                    >
+                        <i class="fa-solid fa-video-slash"></i>
+                        <span>الفيديو غير متاح</span>
+                    </div>
+
+                </div>
+
+                <div class="media-controls">
+
+                    <button
+                        id="audio-button"
+                        class="media-button"
+                        type="button"
+                        onclick="playCardAudio()"
+                    >
+                        <i class="fa-solid fa-volume-high"></i>
+                    </button>
+
+                    <button
+                        id="video-speed-btn"
+                        class="speed-button"
+                        type="button"
+                        onclick="toggleVideoSpeed()"
+                    >
+                        1x
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="card-panel">
+
+                <div
+                    id="card-en-text"
+                    class="card-en-text"
+                    dir="ltr"
+                ></div>
+
+                <div class="card-divider"></div>
+
+                <div
+                    id="card-ar-text"
+                    class="card-ar-text"
+                ></div>
+
+                <div
+                    id="card-notes"
+                    class="card-notes hidden"
+                ></div>
+
+            </div>
+
+        </div>
+
+        <div class="srs-container">
+
+            <button
+                class="srs-button easy"
+                type="button"
+                onclick="handleSRS('easy')"
+            >
+                <span>سهل</span>
+            </button>
+
+            <button
+                class="srs-button good"
+                type="button"
+                onclick="handleSRS('good')"
+            >
+                <span>جيد</span>
+            </button>
+
+            <button
+                class="srs-button hard"
+                type="button"
+                onclick="handleSRS('hard')"
+            >
+                <span>صعب</span>
+            </button>
+
+            <button
+                class="srs-button again"
+                type="button"
+                onclick="handleSRS('again')"
+            >
+                <span>عيد تاني</span>
+            </button>
+
+        </div>
+
+    </section>
+
+    <div
+        id="modal-complete"
+        class="modal-overlay hidden"
+    >
+
+        <div class="completion-modal">
+
+            <div class="completion-icon">🎉</div>
+
+            <h2>عاش يا بطل!</h2>
+
+            <p>
+                انت خلصت كروت النهارده كلها
+            </p>
+
+            <strong>
+                <span id="complete-cards-count">0</span>
+                كارت
+            </strong>
+
+            <button
+                class="primary-button"
+                type="button"
+                onclick="closeCompleteModal()"
+            >
+                الرئيسية
+            </button>
+
+        </div>
+
+    </div>
+
+    <div
+        id="modal-subscription"
+        class="modal-overlay hidden"
+    >
+
+        <div class="subscription-modal">
+
+            <button
+                class="modal-close"
+                type="button"
+                onclick="closeSubscriptionModal()"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="subscription-header">
+
+                <i class="fa-solid fa-crown"></i>
+
+                <h2>اشترك الآن</h2>
+
+                <p>
+                    افتح كل المميزات وانطلق في تعلمك
+                </p>
+
+            </div>
+
+            <div class="subscription-plans">
+
+                <div class="plan free-plan">
+
+                    <div class="plan-header">
+                        <h3>مجاني</h3>
+                        <span>0$</span>
+                    </div>
+
+                    <ul>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            كارتين فقط في اليوم
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-xmark"></i>
+                            إحصائيات محدودة
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="plan basic-plan">
+
+                    <div class="popular-badge">
+                        الأكثر طلباً
+                    </div>
+
+                    <div class="plan-header">
+                        <h3>أساسي</h3>
+                        <span>5$/mo</span>
+                    </div>
+
+                    <ul>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            100 كارت في اليوم
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            أغلب المميزات متاحة
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="plan pro-plan">
+
+                    <div class="plan-header">
+                        <h3>برو</h3>
+                        <span>10$/mo</span>
+                    </div>
+
+                    <ul>
+
+                        <li>
+                            <i class="fa-solid fa-infinity"></i>
+                            عدد لا محدود من الكروت
+                        </li>
+
+                        <li>
+                            <i class="fa-solid fa-star"></i>
+                            كل المميزات المتقدمة
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

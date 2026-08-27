@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Verification</title>
+</head>
+
+<body>
+    <main class="app screen">
+        <div class="page-shell">
+            <div class="topbar"><button class="icon-btn" onclick="history.back()"><i
+                        class="fa-solid fa-chevron-right"></i></button></div>
+            <div class="hero">
+                <div class="center-head">
+                    <div class="hero-icon">🛡️</div>
+                    <h1>تأكيد البريد</h1>
+                    <p>أدخل الكود المرسل إلى بريدك الإلكتروني</p>
+                </div>
+                <div class="card fade-up">
+                    <div class="field"><label>الكود التأكيدي</label><input id="code" class="input" maxlength="6"
+                            inputmode="numeric" placeholder="000000"></div>
+                </div>
+            </div>
+            <div class="actions"><button class="primary" onclick="verify()">تأكيد ومتابعة</button><button
+                    class="secondary" onclick="location.href='../register/index.html'">تعديل البيانات</button></div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

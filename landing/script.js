@@ -1,0 +1,1 @@
+document.querySelector(".primary").addEventListener("click", () => {});

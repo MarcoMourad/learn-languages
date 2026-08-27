@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <title>Study Card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="study-page">
+        <header class="study-header">
+            <button id="backButton" class="icon-button" type="button" aria-label="رجوع">
+                <span>‹</span>
+            </button>
+
+            <div class="progress-area">
+                <div class="progress-track">
+                    <div id="progressBar" class="progress-value"></div>
+                </div>
+                <span id="progressText" class="progress-text">1 / 1</span>
+            </div>
+        </header>
+
+        <section class="study-layout">
+            <section class="media-section">
+                <div class="video-card">
+                    <div id="videoPlaceholder" class="video-placeholder">
+                        <div class="video-placeholder-icon">▶</div>
+                        <span>الفيديو غير متاح</span>
+                    </div>
+
+                    <iframe
+                        id="youtubeFrame"
+                        class="youtube-frame hidden"
+                        title="Card video"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="media-controls">
+                    <button id="audioButton" class="round-control" type="button" aria-label="تشغيل الصوت">
+                        <span>◖)))</span>
+                    </button>
+
+                    <button id="speedButton" class="speed-control" type="button">
+                        1x
+                    </button>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <article class="content-card">
+                    <div class="card-block english-block">
+                        <span class="block-label">English</span>
+                        <div id="englishText" class="english-text"></div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="card-block arabic-block">
+                        <span class="block-label">الترجمة</span>
+                        <div id="arabicText" class="arabic-text"></div>
+                    </div>
+
+                    <div id="notesBlock" class="notes-block hidden">
+                        <span class="notes-icon">💡</span>
+                        <div>
+                            <span class="block-label">ملاحظات</span>
+                            <div id="notesText"></div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </section>
+
+        <footer class="srs-footer">
+            <button class="srs-button again" data-rating="again" type="button">
+                <strong>عيد تاني</strong>
+                <span>اليوم</span>
+            </button>
+
+            <button class="srs-button hard" data-rating="hard" type="button">
+                <strong>صعب</strong>
+                <span>بكرة</span>
+            </button>
+
+            <button class="srs-button good" data-rating="good" type="button">
+                <strong>جيد</strong>
+                <span>يومين</span>
+            </button>
+
+            <button class="srs-button easy" data-rating="easy" type="button">
+                <strong>سهل</strong>
+                <span>4 أيام</span>
+            </button>
+        </footer>
+    </main>
+
+    <div id="completeModal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="completion-card">
+            <div class="completion-icon">🎉</div>
+            <h2>عاش يا بطل!</h2>
+            <p>انت خلصت كروت النهارده كلها</p>
+            <strong id="completedCount">0 كارت</strong>
+            <button id="homeButton" type="button">الرئيسية</button>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

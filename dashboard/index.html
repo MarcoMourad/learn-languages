@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <main class="app dashboard">
+        <header class="dashboard-header">
+            <div class="profile"><button class="avatar" onclick="toggleProfile()"><img
+                        src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix&backgroundColor=b6e3f4"
+                        alt="Avatar"></button>
+                <div id="profileMenu" class="profile-menu hidden"><button><i
+                            class="fa-solid fa-gear"></i>الإعدادات</button><button onclick="openSubscription()"><i
+                            class="fa-solid fa-crown"></i>الإشتراكات</button>
+                    <div class="divider"></div><button class="logout" onclick="logout()"><i
+                            class="fa-solid fa-arrow-right-from-bracket"></i>تسجيل الخروج</button>
+                </div>
+            </div>
+            <div class="tabs">
+                <div id="indicator" class="indicator"></div><button id="homeBtn" class="active"
+                    onclick="switchTab('home')">الرئيسية</button><button id="statsBtn"
+                    onclick="switchTab('stats')">الاحصائيات</button>
+            </div>
+            <div class="brand">
+                <div class="streak"><span>5</span><i class="fa-solid fa-fire"></i></div>
+                <div class="logo">🍋</div>
+            </div>
+        </header>
+        <section class="dashboard-body">
+            <div id="homePanel" class="tab-panel">
+                <div id="decks" class="decks"></div>
+            </div>
+            <div id="statsPanel" class="tab-panel hidden">
+                <div class="stats">
+                    <div class="stats-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                    <h2>إحصائيات اليوم</h2>
+                    <p>تابع تقدمك واستمر في التعلم</p>
+                    <div class="stats-card">
+                        <div class="stat"><span>انت ذاكرت</span><strong id="cards">0 <small>كارت</small></strong></div>
+                        <div class="stat-divider"></div>
+                        <div class="stat"><span>انت حفظت</span><strong id="words">0 <small>كلمة</small></strong></div>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-profile"><img
+                                src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix&backgroundColor=b6e3f4"
+                                alt="Profile">
+                            <h3 id="profile-name">اسم المستخدم</h3>
+                            <p id="profile-level">Level 1 🔥</p>
+                        </div>
+                        <div class="achievement-list"><span>🔥 5 أيام متتالية</span><span>📚 <b
+                                    id="achievementCards">0</b> كارت</span><span>🧠 <b id="achievementWords">0</b>
+                                كلمة</span></div><button class="share-button" onclick="shareProgress()"><i
+                                class="fa-solid fa-share-nodes"></i><span>مشاركة الإنجازات</span></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="subscription" class="modal-backdrop hidden" onclick="closeSubscription(event)">
+            <div class="modal" onclick="event.stopPropagation()"><button class="close" onclick="closeSubscription()"><i
+                        class="fa-solid fa-xmark"></i></button>
+                <div class="modal-head"><i class="fa-solid fa-crown"></i>
+                    <h2>اشترك الآن</h2>
+                    <p>افتح كل المميزات وانطلق في تعلمك</p>
+                </div>
+                <div class="plans">
+                    <div class="plan">
+                        <div class="plan-head"><span>مجاني</span><span>0$</span></div>
+                        <ul>
+                            <li>✓ كارتين فقط في اليوم</li>
+                            <li>× إحصائيات محدودة</li>
+                        </ul>
+                    </div>
+                    <div class="plan basic"><span class="badge">الأكثر طلباً</span>
+                        <div class="plan-head"><span>أساسي</span><span>5$/mo</span></div>
+                        <ul>
+                            <li>✓ 100 كارت في اليوم</li>
+                            <li>✓ أغلب المميزات متاحة</li>
+                        </ul>
+                    </div>
+                    <div class="plan pro">
+                        <div class="plan-head"><span>برو</span><span>10$/mo</span></div>
+                        <ul>
+                            <li>∞ عدد لا محدود من الكروت</li>
+                            <li>★ كل المميزات المتقدمة</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

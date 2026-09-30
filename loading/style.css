@@ -1,0 +1,11 @@
+@import url("../assets/styles/foundation.css");
+.loading-page { display:grid; place-items:center; background:#fffdf2; }
+.loading-content { display:grid; gap:30px; place-items:center; text-align:center; }
+.lemon-grid { width:min(300px,75vw); display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.lemon-grid span { display:grid; aspect-ratio:1; place-items:center; border-radius:50%; background:#fff9cf; font-size:44px; animation:pulse 1.2s infinite alternate var(--ease); }
+.lemon-grid span:nth-child(2n) { animation-delay:.18s; }
+.lemon-grid span:nth-child(3n) { animation-delay:.36s; }
+.loading-copy { display:grid; gap:7px; }
+.loading-copy strong { font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif; font-size:22px; }
+.loading-copy span { color:var(--muted); font-size:13px; }
+@keyframes pulse { to { transform:translateY(-7px) scale(1.04); } }

@@ -1,3 +1,5 @@
+const selectedDeckId = new URLSearchParams(window.location.search).get("deck") || "deck1";
+const activeDeck = (window.LL_DECKS || []).find(deck => deck.id === selectedDeckId) || window.LL_DECKS[0];
 let studyQueue = [...activeDeck.cards];
 let initialQueueSize = studyQueue.length;
 let currentCardIndex = 0;
@@ -121,6 +123,11 @@ function showCompleteSession() {
 
     completedCount.textContent =
         `${initialQueueSize} كارت`;
+
+    const stats = LLStorage.get("stats", { cards: 0, words: 0 });
+    stats.cards += initialQueueSize;
+    stats.words += initialQueueSize;
+    LLStorage.set("stats", stats);
 
     completeModal.classList.remove("hidden");
 }

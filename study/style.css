@@ -21,10 +21,10 @@ body {
 
 body {
     font-family:
-        "SF Pro Rounded",
-        "SF Rounded",
         -apple-system,
         BlinkMacSystemFont,
+        "SF Pro Text",
+        "SF Arabic",
         "Segoe UI",
         sans-serif;
 }
@@ -46,6 +46,7 @@ button {
     flex-direction: column;
     background: var(--surface);
 }
+
 
 .study-header {
     width: min(1180px, calc(100% - 32px));
